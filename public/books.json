@@ -1,0 +1,94 @@
+[
+    {
+      "bookId": "978-0-330-25864-9",
+      "bookName": "1984",
+      "author": "George Orwell",
+      "image": "./image/kindpng_1064993.png",
+      "review": "A chilling portrayal of a dystopian society, where Big Brother watches your every move.",
+      "totalPages": 328,
+      "rating": 4.7,
+      "category": "Fiction",
+      "tags": ["Dystopian", "Political Fiction"],
+      "yearOfPublishing": 1949
+    },
+    {
+      "bookId": "978-1-101-15968-2",
+      "bookName": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "image": "./image/kindpng_2193744 1.png",
+      "review": "A profound exploration of racial injustice and moral growth in the American South.",
+      "totalPages": 336,
+      "rating": 4.8,
+      "category": "Fiction",
+      "tags": ["Classic", "Coming of Age", "Legal Drama"],
+      "publisher": "J.B. Lippincott & Co.",
+      "yearOfPublishing": 1960
+    },
+    {
+      "bookId": "978-0-679-60176-4",
+      "bookName": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "image": "./image/kindpng_2592315 1.png",
+      "review": "A mesmerizing tale of love, wealth, and the American Dream set in the Jazz Age.",
+      "totalPages": 180,
+      "rating": 4.5,
+      "category": "Fiction",
+      "tags": ["Classic", "Romance", "Tragedy"],
+      "publisher": "Charles Scribner's Sons",
+      "yearOfPublishing": 1925
+    },
+    {
+      "bookId": "978-0-525-94343-9",
+      "bookName": "The Lord of the Rings",
+      "author": "J.R.R. Tolkien",
+      "image": "./image/kindpng_4022054 1.png",
+      "review": "An epic fantasy adventure through Middle-earth, filled with rich characters and lore.",
+      "totalPages": 1178,
+      "rating": 4.9,
+      "category": "Fantasy",
+      "tags": ["Epic Fantasy", "High Fantasy"],
+      "publisher": "Allen & Unwin",
+      "yearOfPublishing": 1954
+    },
+    {
+      "bookId": "978-0-670-03442-5",
+      "bookName": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "image": "./image/kindpng_4945926 1.png",
+      "review": "A timeless romance with sparkling wit and social commentary.",
+      "totalPages": 279,
+      "rating": 4.6,
+      "category": "Fiction",
+      "tags": ["Romance", "Classic Literature"],
+      "publisher": "T. Egerton, Whitehall",
+      "yearOfPublishing": 1813
+    },
+    {
+      "bookId": "978-0-14-143951-8",
+      "bookName": "Frankenstein",
+      "author": "Mary Shelley",
+      "image": "./image/kindpng_5624060 1.png",
+      "review": "A groundbreaking work of gothic fiction exploring themes of creation, identity, and responsibility.",
+      "totalPages": 280,
+      "rating": 4.4,
+      "category": "Gothic Fiction",
+      "tags": ["Classic", "Science Fiction", "Horror"],
+      "publisher": "Lackington, Hughes, Harding, Mavor, & Jones",
+      "yearOfPublishing": 1818
+    },
+    {
+        "bookId": "978-3-16-148410-0",
+        "bookName": "The Catcher in the Rye",
+        "author": "J.D. Salinger",
+        "image": "./image/kindpng_81724 1.png",
+        "review": "A timeless classic that captures the essence of teenage angst and rebellion.",
+        "totalPages": 224,
+        "rating": 4.5,
+        "category": "Fiction",
+        "tags": ["Coming of Age", "Literary Fiction", "American Literature"],
+        "publisher": "Little, Brown and Company",
+        "yearOfPublishing": 1951
+      }
+      
+  ]
+  
