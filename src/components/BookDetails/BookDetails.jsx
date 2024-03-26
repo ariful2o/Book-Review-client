@@ -1,32 +1,29 @@
-import React from 'react';
+import { key } from "localforage";
+import { useEffect, useState } from "react";
 import { useLoaderData, useParams } from 'react-router-dom';
-import { useEffect, useState } from "react"
+import Details from "../Details/Details";
 
-function BookDetails() {
+export default function BookDetails() {
+
     const { bookId } = useParams(); // Extract the bookId from URL parameters
     // console.log(bookId)
+    const books = useLoaderData()
+    // const [book, setBook] = useState()
+    
+    
 
-    const [books,setBooks]=useState([])
-    useEffect(()=>{
-      fetch('../../../public/books.json')
-     .then(res=>res.json())
-     .then(data=>setBooks(data))
-    },[])
-
-    const book = books.find(book => book.bookId === bookId);
-    const{bookName,author,image,review,totalPages,rating,category,tags,yearOfPublishing}=book
- 
-    console.log(book)
     return (
-        <div className='flex flex-col lg:flex-row'>
-            <img src={image} alt="" />
-            <div className="">
-                <h2 className="text-3xl">{bookName}</h2>
-                
-
-            </div>
+        <div>
+           <h2>books details</h2>
+           {
+             books.map((book)  => {
+               if (book.bookId === bookId) {
+                 return (
+                   <Details key={book.bookId} book={book}></Details>
+                 )
+               }
+             })
+           }
         </div>
-    );
+    )
 }
-
-export default BookDetails;
