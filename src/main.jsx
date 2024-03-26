@@ -31,13 +31,14 @@ const router = createBrowserRouter([
         element: <PagestoRead />,
       },
       {
-        path: "/deatilsbook",
+        path: "book/:bookId",
+        loader:(({params})=>fetch('books.json')),
         element: <BookDetails />,
-      },
+      }
+      
     ],
   },
 ]);
-
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
         <RouterProvider router={router} />
