@@ -47,9 +47,9 @@ export default function ListedBooks() {
   useEffect(() => {
     const wishreadBook = getLocalStoredBooks('read')
     if (books.length > 0) {
-      const wishlist = books.filter(book => wishreadBook.includes(book.bookId))
-      setReadBooks(wishlist)
-      // setSortby(wishlist)
+      const reads = books.filter(book => wishreadBook.includes(book.bookId))
+      setReadBooks(reads)
+      setSort(reads)
     }
   }, [])
 
