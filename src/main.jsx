@@ -1,16 +1,15 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import Root from './components/Root/Root.jsx';
+import BookDetails from './components/BookDetails/BookDetails.jsx';
 import Home from './components/Home/Home.jsx';
 import ListedBooks from './components/ListedBooks/ListedBooks.jsx';
 import PagestoRead from './components/PagestoRead/PagestoRead.jsx';
-import BookDetails from './components/BookDetails/BookDetails.jsx';
+import Root from './components/Root/Root.jsx';
+import './index.css';
 
 const router = createBrowserRouter([
   {
@@ -25,6 +24,7 @@ const router = createBrowserRouter([
       {
         path: "/BookList",
         element: <ListedBooks />,
+        loader:()=>fetch('/books.json')
       },
       {
         path: "/PagestoRead",
@@ -32,7 +32,7 @@ const router = createBrowserRouter([
       },
       {
         path: "book/:bookId",
-        loader:(()=>fetch('books.json')),
+        loader:()=>fetch('/books.json'),
         element: <BookDetails />,
       }
       

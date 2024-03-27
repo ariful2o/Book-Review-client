@@ -1,5 +1,3 @@
-import { key } from "localforage";
-import { useEffect, useState } from "react";
 import { useLoaderData, useParams } from 'react-router-dom';
 import Details from "../Details/Details";
 
@@ -9,21 +7,12 @@ export default function BookDetails() {
     // console.log(bookId)
     const books = useLoaderData()
     // const [book, setBook] = useState()
-    
-    
+    const book=books.find(book=>book.bookId===bookId)
+    // console.log(book)
 
     return (
-        <div>
-           <h2>books details</h2>
-           {
-             books.map((book)  => {
-               if (book.bookId === bookId) {
-                 return (
-                   <Details key={book.bookId} book={book}></Details>
-                 )
-               }
-             })
-           }
-        </div>
+      
+        <Details  book={book}></Details>
+      
     )
 }

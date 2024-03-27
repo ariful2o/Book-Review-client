@@ -1,8 +1,19 @@
-import React from 'react'
+import { ToastContainer, toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
+import { getLocalStoredBooks, saveBook } from '../utlitys/utilitys';
 
 export default function Details({ book }) {
-    const { bookName, image, author, category, review, tags,totalPages ,publisher,yearOfPublishing,rating} = book
-    console.log(book)
+    const { bookName, image, author, category, review, tags, totalPages, publisher, yearOfPublishing, rating ,bookId} = book
+    
+    const notify = () => {saveBook(bookId),toast("Success to add Wishlist")};
+   
+    const getbook = () => {
+      getLocalStoredBooks()
+    }
+    
+
+
     return (
         <div className='flex justify-center'>
             <img className='w-96 h-96 m-10' src={image} alt="" />
@@ -53,8 +64,9 @@ export default function Details({ book }) {
                     </div>
                 </div>
                 <div className="flex gap-6 my-4">
-                    <button className="btn btn-outline bg-slate-300 py-2 px-6">Read</button>
-                    <button className="btn bg-[#50B1C9] text-white">Wishlist</button>
+                    <button onClick={getbook} className="btn btn-outline bg-slate-300 py-2 px-6">Read</button>
+                    <button onClick={notify} className="btn bg-[#50B1C9] text-white">Wishlist</button>
+                    <ToastContainer />
                 </div>
             </div>
         </div>
