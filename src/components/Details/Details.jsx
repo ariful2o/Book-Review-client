@@ -4,15 +4,15 @@ import 'react-toastify/dist/ReactToastify.css';
 import { getLocalStoredBooks, saveBook } from '../utlitys/utilitys';
 
 export default function Details({ book }) {
-    const { bookName, image, author, category, review, tags, totalPages, publisher, yearOfPublishing, rating ,bookId} = book
-    
-    const notify = () => {saveBook(bookId,'wishlist'),toast("Success to add Wishlist")};
-   
+    const { bookName, image, author, category, review, tags, totalPages, publisher, yearOfPublishing, rating, bookId } = book
+
+    const notify = () => { saveBook(bookId, 'wishlist'), toast("Success to add Wishlist") };
+
     const readbooks = () => {
-        saveBook(bookId,'read'),
-        toast("Success to add Read Book")
+        saveBook(bookId, 'read'),
+            toast("Success to add Read Book")
     }
-    
+
 
 
     return (

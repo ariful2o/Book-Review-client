@@ -4,7 +4,7 @@ import { MdOutlineContactPage } from "react-icons/md";
 import { NavLink } from "react-router-dom";
 
 export default function WishlistBook({ book }) {
-  const { bookName, image, author, category, tags, totalPages, publisher, yearOfPublishing, rating,bookId } = book
+  const { bookName, image, author, category, tags, totalPages, publisher, yearOfPublishing, rating, bookId } = book
   return (
     <div>
       <div className="card card-side bg-base-100 shadow-xl p-8">
