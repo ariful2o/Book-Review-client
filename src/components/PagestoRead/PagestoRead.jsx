@@ -15,8 +15,7 @@ export default function PagestoRead() {
   }, [])
   // console.log(readAllBook)
   return (
-    <div>
-      <h2>read books {readAllBook.length}</h2>
+    <div className="my-20">
       <CoustomChart readAllBook={readAllBook}></CoustomChart>
     </div>
   )
