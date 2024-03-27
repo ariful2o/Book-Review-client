@@ -1,5 +1,5 @@
-const getLocalStoredBooks = () => {
-  const stroedBooks=localStorage.getItem('wishlist');
+const getLocalStoredBooks = (keysName) => {
+  const stroedBooks=localStorage.getItem(keysName);
   if(stroedBooks){
       return JSON.parse(stroedBooks)
     }else{
@@ -8,12 +8,12 @@ const getLocalStoredBooks = () => {
 }
 
 
-const saveBook = (id) => {
-  const stroedBook=getLocalStoredBooks()
+const saveBook = (id,keysName) => {
+  const stroedBook=getLocalStoredBooks(keysName)
   const exisit=stroedBook.find(book=>book.bookId===id)
     if(!exisit){
           stroedBook.push(id)
-      localStorage.setItem('wishlist',JSON.stringify(stroedBook))
+      localStorage.setItem(keysName,JSON.stringify(stroedBook))
   }
 
 }

@@ -1,9 +1,10 @@
 import { CiLocationOn } from "react-icons/ci";
 import { IoMdContacts } from "react-icons/io";
 import { MdOutlineContactPage } from "react-icons/md";
+import { NavLink } from "react-router-dom";
 
 export default function WishlistBook({ book }) {
-  const { bookName, image, author, category, tags, totalPages, publisher, yearOfPublishing, rating } = book
+  const { bookName, image, author, category, tags, totalPages, publisher, yearOfPublishing, rating,bookId } = book
   return (
     <div>
       <div className="card card-side bg-base-100 shadow-xl p-8">
@@ -38,7 +39,7 @@ export default function WishlistBook({ book }) {
           <div className="card-actions items-center">
             <div className="badge py-5 bg-[#328EFF26] text-[#328EFF]">Category :{category}</div>
             <div className="badge text-[#FFAC33] mx-8">Rating :{rating}</div>
-            <button className="btn bg-[#23BE0A] rounded-3xl text-white">View Details</button>
+            <NavLink to={`/book/${bookId}`} className="btn bg-[#23BE0A] rounded-3xl text-white">View Details</NavLink>
           </div>
         </div>
       </div>

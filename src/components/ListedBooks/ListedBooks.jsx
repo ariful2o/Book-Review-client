@@ -9,10 +9,20 @@ export default function ListedBooks() {
   const [listbooks,setListBooks]=useState([])
   const books=useLoaderData()
   useEffect(()=>{
-    const wishlistbooks=getLocalStoredBooks()
+    const wishlistbooks=getLocalStoredBooks('wishlist')
     if (books.length>0) {
       const wishlist=books.filter(book=>wishlistbooks.includes(book.bookId))
       setListBooks(wishlist)
+    }
+  },[])
+  
+  const [readBook,setReadBooks]=useState([])
+  // const books=useLoaderData()
+  useEffect(()=>{
+    const wishreadBook=getLocalStoredBooks('read')
+    if (books.length>0) {
+      const wishlist=books.filter(book=>wishreadBook.includes(book.bookId))
+      setReadBooks(wishlist)
     }
   },[])
   
@@ -42,7 +52,13 @@ const Sort = (e) => {
 
       <div role="tablist" className="tabs tabs-lifted">
         <input type="radio" name="my_tabs_2" role="tab" className="tab" aria-label="Read Books" />
-        <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box p-6">Read Books</div>
+        <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box p-6">{
+          readBook.map((book)=>{
+            return <WishlistBook book={book} key={book.bookId}/>
+     
+
+          })
+        }</div>
 
         <input type="radio" name="my_tabs_2" role="tab" className="tab" aria-label="Wishlist Books" checked />
         <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box p-6">{

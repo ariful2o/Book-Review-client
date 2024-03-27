@@ -6,10 +6,11 @@ import { getLocalStoredBooks, saveBook } from '../utlitys/utilitys';
 export default function Details({ book }) {
     const { bookName, image, author, category, review, tags, totalPages, publisher, yearOfPublishing, rating ,bookId} = book
     
-    const notify = () => {saveBook(bookId),toast("Success to add Wishlist")};
+    const notify = () => {saveBook(bookId,'wishlist'),toast("Success to add Wishlist")};
    
-    const getbook = () => {
-      getLocalStoredBooks()
+    const readbooks = () => {
+        saveBook(bookId,'read'),
+        toast("Success to add Read Book")
     }
     
 
@@ -64,7 +65,7 @@ export default function Details({ book }) {
                     </div>
                 </div>
                 <div className="flex gap-6 my-4">
-                    <button onClick={getbook} className="btn btn-outline bg-slate-300 py-2 px-6">Read</button>
+                    <button onClick={readbooks} className="btn btn-outline bg-slate-300 py-2 px-6">Read</button>
                     <button onClick={notify} className="btn bg-[#50B1C9] text-white">Wishlist</button>
                     <ToastContainer />
                 </div>
