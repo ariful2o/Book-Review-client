@@ -15,20 +15,21 @@ export default function ListedBooks() {
   };
   
 
-  const handlerSort = () => {
-    if(selectedValue==="Rating"){
-      const sortedBooks=listbooks.sort((a,b)=>b.rating-a.rating)
-      setSort(sortedBooks)
+  useEffect(() => {
+    // const wishlistbooks = getLocalStoredBooks('wishlist');
+    if (listbooks.length > 0) {
+      let sortedBooks = [...listbooks];
+      if (selectedValue === "Rating") {
+        sortedBooks = sortedBooks.sort((a, b) => b.rating - a.rating);
+      } else if (selectedValue === "Numberofpages") {
+        sortedBooks = sortedBooks.sort((a, b) => b.totalPages - a.totalPages);
+      } else if (selectedValue === "Publisheryear") {
+        sortedBooks = sortedBooks.sort((a, b) => b.yearOfPublishing - a.yearOfPublishing);
+      }
+      setSort(sortedBooks);
     }
-    else if(selectedValue==="Numberofpages"){
-      const sortedBooks=listbooks.sort((a,b)=>b.totalPages-a.totalPages)
-      setSort(sortedBooks)
-    }
-    else if(selectedValue==="Publisheryear"){
-      const sortedBooks=listbooks.sort((a,b)=>b.yearOfPublishing-a.yearOfPublishing)
-      setSort(sortedBooks)
-    }
-  }
+  }, [selectedValue, listbooks]);
+
 
 
   const books = useLoaderData()
@@ -64,7 +65,7 @@ export default function ListedBooks() {
       <h2 className='text-3xl font-bold text-center bg-slate-100 py-4 my-8 '>Books</h2>
 
       <div className="justify-center flex my-8">
-        <select onChange={handleSelectChange} onClick={handlerSort} // Attach the event handler to the select element
+        <select onChange={handleSelectChange} // Attach the event handler to the select element
       value={selectedValue}  className="select select-accent w-full max-w-[200px] text-center bg-[#23BE0A] text-white" name="selectedFruit">
           <option disabled selected>Sort By</option>
           <option value="Rating">Rating</option>

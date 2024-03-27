@@ -1,5 +1,10 @@
 .active {
+  color: #23be0aed;
+  background-color: white;
   border-radius: 8px;
+  padding: 8px 20px;
+  /* justify-content: center; */
   border: 1px solid #23be0a;
-  background-color:white;
+  font-weight: 800;
+  font-style: italic;
 }
