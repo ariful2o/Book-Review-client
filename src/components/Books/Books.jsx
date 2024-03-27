@@ -11,7 +11,7 @@ export default function Books() {
   return (
     <div>
         <h1 className="text-center font-bold text-2xl italic my-20">Books</h1>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 my-8">
          {
           books.map((books)=>{
             return(
