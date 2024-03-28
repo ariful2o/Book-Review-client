@@ -7,7 +7,7 @@ export default function BookDetails() {
     // console.log(bookId)
     const books = useLoaderData()
     // const [book, setBook] = useState()
-    const book=books.find(book=>book.bookId==bookId)
+    const book=books.find(book=>book.bookId===bookId)
     // console.log(book)
 
     return (

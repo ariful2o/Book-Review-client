@@ -1,17 +1,33 @@
 import { ToastContainer, toast } from 'react-toastify';
-
 import 'react-toastify/dist/ReactToastify.css';
 import { getLocalStoredBooks, saveBook } from '../utlitys/utilitys';
 
 export default function Details({ book }) {
     const { bookName, image, author, category, review, tags, totalPages, publisher, yearOfPublishing, rating, bookId } = book
 
-    const notify = () => { saveBook(bookId, 'wishlist'), toast("Success to add Wishlist") };
+    const wishlist = () => { 
+    const storedBooks=getLocalStoredBooks('wishlist');
+    const storedBooksRead=getLocalStoredBooks('read')
+    if (storedBooks.includes(bookId)) {
+        toast.error("Already added to Wish List !")
+    }
+    else if(storedBooksRead.includes(bookId)) {
+        toast.error("Already You Read the Book !")  
+    }
+    else {
+        saveBook(bookId,'wishlist'), toast("Success to add to wishlist")
+    }
+};
 
     const readbooks = () => {
-        saveBook(bookId, 'read'),
-            toast("Success to add Read Book")
-    }
+        const storedBooks=getLocalStoredBooks('read')
+        if (storedBooks.includes(bookId)) {
+            toast.error("Already added to read list !")
+        } else {
+            saveBook(bookId,'read'), toast("Success to add to read list")
+        }
+        // saveBook(bookId, 'read'),toast("Success to add Read Book") 
+    };
 
 
 
@@ -66,7 +82,7 @@ export default function Details({ book }) {
                 </div>
                 <div className="flex gap-6 my-4">
                     <button onClick={readbooks} className="btn btn-outline bg-slate-300 py-2 px-6">Read</button>
-                    <button onClick={notify} className="btn bg-[#50B1C9] text-white">Wishlist</button>
+                    <button onClick={wishlist} className="btn bg-[#50B1C9] text-white">Wishlist</button>
                     <ToastContainer />
                 </div>
             </div>

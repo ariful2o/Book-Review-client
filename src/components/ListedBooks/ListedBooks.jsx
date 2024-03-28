@@ -76,14 +76,14 @@ export default function ListedBooks() {
       {/* <button className="bg-red-300" onClick={handlerSort}>sotr</button> */}
 
       <div role="tablist" className="tabs tabs-lifted">
-        <input type="radio" name="my_tabs_2" role="tab" className="tab" aria-label="Read Books" />
+        <input type="radio" name="my_tabs_2" role="tab" className="tab" aria-label="Read" />
         <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box p-6">{
           readBook.map((book) => {
             return <WishlistBook book={book} key={book.bookId} />
           })
         }</div>
 
-        <input type="radio" name="my_tabs_2" role="tab" className="tab" aria-label="Wishlist Books" checked />
+        <input type="radio" name="my_tabs_2" role="tab" className="tab" aria-label="Wishlist" checked />
         <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box p-6">{
           sort.map((book) => {
             return <WishlistBook key={book.bookId} book={book}></WishlistBook>
