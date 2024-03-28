@@ -32,7 +32,7 @@ export default function Details({ book }) {
 
 
     return (
-        <div className='flex justify-center'>
+        <div className='flex justify-center my-20'>
             <img className='w-96 h-96 m-10' src={image} alt="" />
             <div className="">
                 <h2 className='text-3xl font-bold'>{bookName}</h2>

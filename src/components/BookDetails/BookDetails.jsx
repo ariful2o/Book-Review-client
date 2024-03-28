@@ -11,8 +11,6 @@ export default function BookDetails() {
     // console.log(book)
 
     return (
-      
         <Details  book={book}></Details>
-      
     )
 }
