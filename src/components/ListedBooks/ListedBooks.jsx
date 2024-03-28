@@ -78,7 +78,7 @@ export default function ListedBooks() {
       <div role="tablist" className="tabs tabs-lifted">
         <input type="radio" name="my_tabs_2" role="tab" className="tab" aria-label="Read" />
         <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box p-6">{
-          readBook.map((book) => {
+          sort.map((book) => {
             return <WishlistBook book={book} key={book.bookId} />
           })
         }</div>
