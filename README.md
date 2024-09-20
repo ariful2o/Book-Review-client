@@ -12,7 +12,7 @@ A web application for reviewing and sorting books using React and Vite. This pro
 ## Live Demo
 
 Check out the live application here: [Book Review App](https://book-vibe10.netlify.app/)
-Check out the live application here: [Book Review App]([https://book-vibe10.netlify.app/](http://melodic-balance.surge.sh/))
+Check out the live application here: [Book Review App](http://melodic-balance.surge.sh/)
 
 ## Tech Stack
 
